@@ -1,0 +1,6 @@
+#define GPIO_TX 14
+#define GPIO_RX 12
+#define BUFFER 256
+
+#define WIFI_SSID "your wifi ssid here"
+#define WIFI_KEY "your_wifi_key_here"
