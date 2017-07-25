@@ -34,23 +34,21 @@ uint8_t i2=0;
 
 void setup() {
 
-  delay(50);
+  delay(500);
 
   swSer.begin(UART_BAUD);
 
   WiFi.mode(WIFI_STA);
   WiFi.setAutoConnect(true);
   WiFi.setAutoReconnect(true);
-  WiFi.begin(WIFI_SSID, WIFI_KEY);
+  if (WiFi.status() != WL_CONNECTED) { WiFi.begin(WIFI_SSID, WIFI_KEY); }
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(100);
   }
 
-  ArduinoOTA.begin();
-
-  server.begin(); // start TCP server
-
+    server.begin(); // start TCP server
+    ArduinoOTA.begin();
 }
 
 
@@ -66,7 +64,7 @@ void loop() {
 
   if(client.available()) {
     while(client.available()) {
-      buf1[i1] = (uint8_t)client.read(); // read char from client 
+      buf1[i1] = (uint8_t)client.read(); // read char from client
       if(i1<bufferSize-1) i1++;
     }
     // now send to UART:
