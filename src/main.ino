@@ -13,7 +13,7 @@ SoftwareSerial swSer(GPIO_RX, GPIO_TX, false, 256);
 
 #define UART_BAUD 9600
 #define packTimeout 5 // ms (if nothing more on UART, then send packet)
-#define bufferSize 8192
+#define bufferSize 256
 
 #define MODE_STA // ESP connects to WiFi router
 
