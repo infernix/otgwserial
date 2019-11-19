@@ -1,0 +1,3 @@
+[submodule "lib/SoftwareSerial"]
+	path = lib/SoftwareSerial
+	url = https://github.com/plerup/espsoftwareserial.git
